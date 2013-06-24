@@ -2,7 +2,7 @@
 
 
 La definición de requerimientos de datos involucra en particular a una área de
-arquitectura [1] de software recomendada por IVOA. Esta capa es la de
+arquitectura de software recomendada por IVOA. Esta capa es la de
 estándares y protocolos de acceso a los datos (Data Access Protocol Standards).
 
 Los datos y metadatos astronómicos están siendo distribuidos mediante distintos
@@ -22,14 +22,14 @@ en la idea de observatorio virtual, y la arquitectura que se debe respetar.
 coordenadas en el espacio, involucra la definición de una coordenada RA/DEC, y
 además de un radio angular. Este tipo de consultas están consideradas dentro de
 un protocolo de acceso de datos definido por IVOA, el cual se llama Simple Cone
-Search [2].  Otra búsqueda puede ser por región del cielo definiendo una región
-rectangular, el protocolo relacionado es Simple Image Access Protocol [2].
+Search.  Otra búsqueda puede ser por región del cielo definiendo una región
+rectangular, el protocolo relacionado es Simple Image Access Protocol.
 
 	\item \textbf{Buscar por metadatos espaciales}: las búsquedas
 espaciales requieren definir parámetros de rangos de resolución angular y
 campos de visión en base a coordenadas. El protocolo de acceso con el cual se
-deberá implementar este requerimiento es mediante Table Access Protocol [3],
-basándose en Astronomical Data Query Language [4].
+deberá implementar este requerimiento es mediante Table Access Protocol,
+basándose en Astronomical Data Query Language.
 
 	\item \textbf{Buscar por nombre o tipo de objeto}: este requerimiento
 considera buscar en ciertos catálogos astronómicos los cuales se definirán a lo
@@ -37,13 +37,13 @@ largo del proyecto, teniendo en consideración qué tipo de datos necesitará la
 comunidad astronómica y los participantes de este proyecto. Los catálogos
 astronómicos son objetos astronómicos agrupados por características en común.
 Para este punto se tendrá que estudiar y aprovechar el marco de trabajo que
-provee IVOA en su grupo de Semánticas [5].
+provee IVOA en su grupo de Semánticas.
 
 	\item \textbf{Buscar por metadatos espectrales}: las búsquedas por
 metadatos espectrales se basará en búsqueda por banda o rango de frecuencia,
 líneas espectrales, búsquedas por resolución espectral y redshift. Este tipo de
 búsqueda se realizará mediante el uso de los protocolos Table Access Protocol y
-Simple Spectra Acess Protocol [6].
+Simple Spectra Acess Protocol.
 
 	\item \textbf{Buscar por metadatos temporales}: la búsqueda por
 metadatos temporales se enfocará a fechas de cuando se hizo cierta observación,
@@ -67,12 +67,11 @@ proyecto, y después cuando ChiVO esté en funcionamiento, existirán fuentes de
 documentación científica, ya sean reportes técnicos o papres. Se implementará
 un buscador que a partir de información como: rango de año, autor, fuente en
 estudio, se le entregue al usuario una lista de artículos que hayan calzado con
-la búsqueda.  Algo similar a como funciona SIMBAD [7].
+la búsqueda.  Algo similar a como funciona SIMBAD.
 
 	\item \textbf{Herramientas de análisis}: durante la ejecución del
 proyecto se implementarán herramientas de análisis de datos de gran escala, las
 cuales serán integradas dentro de lo posible (si es que se pueden usar de forma
 web) a la plataforma online, en otro caso, se proveerá acceso y documentación
 de como usar cada herramienta, tutoriales y casos de ejemplo.
-
 \end{enumerate}

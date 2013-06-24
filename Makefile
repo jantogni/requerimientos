@@ -7,7 +7,7 @@ all: pdf clean
 pdf: $(PDFFILES)
 
 %.pdf: %.tex
-	echo $(TEXFILES)
+	@echo $(TEXFILES)
 	@rubber --pdf $<
 	@if [ -d publish ];then mv *.pdf publish; else mkdir publish; mv *.pdf publish/;fi
 

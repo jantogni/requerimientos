@@ -1,5 +1,7 @@
 \section{Anexos}
 \subsection{IVOA Architecture}
+
+
 El VO's es un framework que ayuda a resolver distintos
 problemas que enfrenta la comunidad astronómica a lo largo del mundo.  Uno de
 los problemas está relacionado al acceso a los datos, por lo que en IVOA
@@ -12,6 +14,7 @@ proceso de creación de servicios, portales web, aplicaciones de escritorio,
 etc. Todo visto del punto de vista de ingeniería de software.
 
 \subsubsection{Arquitectura VO por Nivel}
+
 
 IVOA dentro de sus documentos presenta distintos niveles de arquitectura
 \cite{ivoa_arch}, con el objetivo de ir aclarando incrementalmente las
@@ -84,8 +87,79 @@ a la capa a la cual pertenece.
 
 
 \subsection{Simple Cone Search Protocol}
+
+
+Este protocolo define una consulta simple para obtener registros desde un
+catálogo de fuentes astronómicas. La consulta describe una posición en el cielo
+y una distancia angular, definiendo un cono en el cielo. La respuesta retorna
+una lista de fuentes astronómicas desde el catálogos cuyas posiciones están
+dentro del cono, en formato VOTable.
+\url{http://ivoa.net/Documents/latest/ConeSearch.html}
+
+\subsection{Table Access Protocol}
+
+
+Este protocolo define un servicio general de acceso a datos de tablas,
+incluyendo catálogos astronómicos, como también base de datos generales de
+tablas. El acceso se provee tanto a la base de datos y a la tabla de metadatos
+para la tabla actual. La versión actual del protocolo incluye soporte para
+consultas en múltiples lenguajes, incluyendo consultas especificadas en
+Astronomical Data Query Language (ADQL) y Parameterised Query Language (PQL).
+También incluye soporte para consultas sincrónicas y asíncronas. Este servicio
+está ligado netamente al modelo de datos que se usará.
+\url{http://www.ivoa.net/documents/TAP/}
+
 \subsection{Simple Image Access Protocol}
+
+
+Esta especificación define un protocolo para la obtención de datos de imágenes
+desde una variedad de repositorios de imágenes astronómicos, a través de una
+interfaz uniforme. La interfaz está destinada a ser razonablemente fácil de
+implementar por los proveedores de servicios. La query define una región
+rectangular en el cielo, la cual es usada para encontrar imágenes candidatas.
+El servicio retorna una lista de imágenes en formato VOTable. Por cada imagen
+candidata se entrega una URL de referencia, la cual permite acceder a la
+imagen. La imagen puede ser retornada en varios formatos gráficos (FITS, JPEG,
+etc). \url{http://ivoa.net/Documents/SIA/}
+
 \subsection{Astronomical Data Query Language}
+
+
+ADQL ha sido desarrollado basándose en SQL92. El estándar describe una conjunto
+de gramáticas SQL soportadas(áreas, cajas, círculos, etc). Se han definido
+restricciones y extensiones especiales para SQL92 con el objetivo de soportar
+operaciones astronómicas genéricas.
+\url{http://ivoa.net/Documents/latest/ADQL.html}
+
 \subsection{Semantics}
+
+
+El grupo de semánticas de IVOA explora las tecnologías en el área de
+semánticas, con el objetivo de producir nuevos estándares que ayuden la
+interoperabilidad de los sistemas de VO. Este grupo está enfocado en el
+significado o la interpretación de las palabras, frases u otras formas de
+lenguaje en el contexto de la astronomía. Esto incluye la descripción estándar
+de objetos astrofísicos, tipo de datos, conceptos, eventos, o algún otro tipo
+de fenómeno en astronomía. Este grupo estudia la relación entre palabras,
+símbolos y conceptos, tanto como el significado de esa representación, como por
+ejemplo, ontologías. Este grupo cubre el lenguaje natural en astronomía,
+incluyendo consultas, traducciones, e internacionalización de interfaces.
+\url{http://ivoa.net/twiki/bin/view/IVOA/IvoaSemantics}
+
 \subsection{Simple Spectra Access Protocol}
+
+
+Este protocolo define una interfaz uniforme para descubrir y acceder
+remotamente espectros de una dimensión. Se basa en un modelo de datos más
+general, capaz de describir los datos espectrofotométricos, incluyendo series
+de tiempo y las distribuciones espectrales de energía (SED), así como 1-D de
+espectros. Los conjuntos de datos de candidatos disponibles se describen de
+manera uniforme en un documento de formato de VOTable que se devuelve en la
+respuesta a la consulta. \url{http://ivoa.net/documents/SSA/}
+
 \subsection{SIMBAD}
+
+
+Es una base de datos astronómica que provee datos básicos, identificación
+cruzada, bibliografía y medidas para objetos astronómicos para objetos fuera
+del sistema solar. \url{http://simbad.u-strasbg.fr/simbad/}
