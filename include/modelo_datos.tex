@@ -7,23 +7,26 @@ el estudio de éstos en el siguiente orden:
 	\item[a.] \textbf{Observation Core Data Model}: Define los componentes
 principales de todos los metadatos accesibles que tienen un rol en el
 descubrimiento de las observaciones.  Requerimientos: Todos, debido a que es el
-Modelo de Datos base.  
+Modelo de Datos base. \url{http://www.ivoa.net/documents/ObsCore/index.html} 
 
 	\item[b.] \textbf{Units}: Define las prácticas comunes en la
 manipulación de unidades en los metadatos astronómicos y define una
 representación consistente en los servicios dentro de un Observatorio Virtual.
 Necesario para: Observation Core Data Model, Simple Spectral Line Data Model,
-Characterisation Data Model, Simulations Data Model
+Characterisation Data Model, Simulations Data Model.
+\url{http://www.ivoa.net/documents/VOUnits/index.html}
 
 	\item[c.] \textbf{Utypes}: Relacionado con Units, Utypes son nombres
 que definen inequívocamente los elementos de los metadatos. Necesario para:
 Observation Core Data Model, Simple Spectral Line Data Model, Characterisation
 Data Model, Simulations Data Model.
+\url{http://www.ivoa.net/documents/Notes/UTypesUsage/index.html}
 
 	\item[d.] \textbf{Simple Spectral Line Data Model}: Describe las
 transiciones de líneas espectrales. Podría ser necesario, de otra manera, la
 información puede estar contenida en el Observation Core Data Model.
 Requerimientos: (3) Buscar por metadatos espectrales (frecuencia y resolución).
+\url{http://www.ivoa.net/documents/SSLDM/}
 
 	\item[e.] Characterisation Data Model: Define y organiza todos los
 metadatos necesarios para describir cómo un conjunto de datos ocupa un espacio
@@ -31,16 +34,18 @@ físico multidimensional, cuantitativamente y, cuando es relevante,
 cualitativamente. Requerimientos: (3) Buscar por metadatos espectrales
 (frecuencia y resolución), (4) Buscar por metadatos espaciales (resolución
 angular y campos de visión).
+\url{http://www.ivoa.net/Documents/latest/ImplementationCharacterisation.html}
 
 	\item Space Time Coordinate metadata: Describe metadatos espaciales y
 temporales. Podría ser necesario para usos específicos de tiempo-espacio.
 Requerimientos: (1) Buscar por coordenadas o región del cielo, (2) Buscar por
 nombre o  tipo de objeto, (4) Buscar por metadatos espaciales (resolución
 angular y campos de visión), (5) Buscar por metadatos temporales.
+\url{http://www.ivoa.net/Documents/latest/STC-Model.html}
 
 	\item Simulations Data Model: Define y organiza todos los metadatos
 necesarios para describir conjuntos de datos de simulaciones. Requerimientos:
-(7) Simulaciones.
+(7) Simulaciones. \url{http://www.ivoa.net/documents/SimDM/index.html}
 \end{enumerate}
 
 \subsection{Modelo de datos}
