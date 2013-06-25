@@ -1,1 +1,87 @@
 \section{Capa de modelo de datos}
+\subsection{Estándares y Protocolos IVOA}
+Breve descripción de los protocolos y estándares a considerar. Es recomendado
+el estudio de éstos en el siguiente orden:
+
+\begin{enumerate}
+	\item[a.] \textbf{Observation Core Data Model}: Define los componentes
+principales de todos los metadatos accesibles que tienen un rol en el
+descubrimiento de las observaciones.  Requerimientos: Todos, debido a que es el
+Modelo de Datos base.  
+
+	\item[b.] \textbf{Units}: Define las prácticas comunes en la
+manipulación de unidades en los metadatos astronómicos y define una
+representación consistente en los servicios dentro de un Observatorio Virtual.
+Necesario para: Observation Core Data Model, Simple Spectral Line Data Model,
+Characterisation Data Model, Simulations Data Model
+
+	\item[c.] \textbf{Utypes}: Relacionado con Units, Utypes son nombres
+que definen inequívocamente los elementos de los metadatos. Necesario para:
+Observation Core Data Model, Simple Spectral Line Data Model, Characterisation
+Data Model, Simulations Data Model.
+
+	\item[d.] \textbf{Simple Spectral Line Data Model}: Describe las
+transiciones de líneas espectrales. Podría ser necesario, de otra manera, la
+información puede estar contenida en el Observation Core Data Model.
+Requerimientos: (3) Buscar por metadatos espectrales (frecuencia y resolución).
+
+	\item[e.] Characterisation Data Model: Define y organiza todos los
+metadatos necesarios para describir cómo un conjunto de datos ocupa un espacio
+físico multidimensional, cuantitativamente y, cuando es relevante,
+cualitativamente. Requerimientos: (3) Buscar por metadatos espectrales
+(frecuencia y resolución), (4) Buscar por metadatos espaciales (resolución
+angular y campos de visión).
+
+	\item Space Time Coordinate metadata: Describe metadatos espaciales y
+temporales. Podría ser necesario para usos específicos de tiempo-espacio.
+Requerimientos: (1) Buscar por coordenadas o región del cielo, (2) Buscar por
+nombre o  tipo de objeto, (4) Buscar por metadatos espaciales (resolución
+angular y campos de visión), (5) Buscar por metadatos temporales.
+
+	\item Simulations Data Model: Define y organiza todos los metadatos
+necesarios para describir conjuntos de datos de simulaciones. Requerimientos:
+(7) Simulaciones.
+\end{enumerate}
+
+\subsection{Modelo de datos}
+
+Se especificará una tabla con los atributos y la descripción de cada uno, en
+concordancia a los recomendado con IVOA.
+
+\begin{table}[h!t]
+	\centering
+	\begin{tabular}{|l|l|l|} 
+		\hline
+		Nombre de la columna & Unidad & Descripción \\
+		\hline
+		dataproduct\_type & sin unidad & Tipo de dato lógico \\
+		calib\_level & sin unidad & Nivel de calibración \\
+		obs\_collection & sin unidad & Nombre de la colección de datos \\
+		obs\_id & sin unidad & ID de observación \\
+		obs\_publisher\_id & sin unidad & Identificador de datos entregado por el publisher \\
+		access\_url & sin unidad & URL para acceder a los datos \\
+		access\_format & sin unidad & Formato del archivo \\
+		access\_estsize & kbyte & Tamaño estimado en KB \\
+		target\_name & sin unidad & Objeto astronómico observado \\
+		s\_ra & grados & RA central \\
+		s\_dec & grados & Dec central \\
+		s\_fov & grados & Diámetros de la región cubierta \\
+		s\_region & sin unidad & Región cubierta en ADQL \\
+		s\_resolution & arco segundos & Resolución espacial \\
+		t\_min & días & Hora de comienzo \\
+		t\_max & días & Hora de fin \\
+		t\_exptime & segundos & Tiempo de exposición \\
+		t\_resolution & segundos & Resolución temporal \\
+		em\_min & minutos & Comienzo en coordenadas espectrales \\
+		em\_max & minutos & Fin en coordenadas espectrales \\
+		em\_res\_power & sin unidad & Poder de resolución espectral \\
+		o\_ucd & sin unidad & UCD observable \\
+		pol\_states & sin unidad & Lista de estados de polarización \\
+		facility\_name & sin unidad & Nombre del lugar usado para la observación \\
+		instrument\_name & sin unidad & Nombre del instrumento usado para la observación \\
+		\hline
+	\end{tabular}
+	\caption{Integrantes de IVOA}
+	\label{table:tap_column_name}
+\end{table}
+

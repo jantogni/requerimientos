@@ -18,17 +18,18 @@
 \usepackage{fancyhdr}
 \usepackage{moreverb}
 
-\geometry{tmargin=4.5cm, lmargin=3.0cm, rmargin=2.5cm, bmargin=2.0cm}
+\geometry{tmargin=3.0cm, lmargin=3.0cm, rmargin=2.5cm, bmargin=3.0cm}
 
-\newcommand\R{R} %Sentencia para crear nuevos comandos.
+\newcommand\R{R}
 \newenvironment{keywords}{\begin{description}\item[Keywords:]}{\end{description}}
 
 \title{
 \center{
 	\textbf{Especificación de Requerimientos}
 	}
-\author{Author1 \\ \url{author1@csrg.inf.utfsm.cl} \\
-	Author2 \\ \url{author2@csrg.inf.utfsm.cl} \\
+\author{Mauricio Solar \\ \url{msolar@inf.utfsm.cl} \\
+	Jonathan Antognini \\ \url{jantogni@csrg.inf.utfsm.cl} \\
+	Walter Fariña \\ \url{walter.farina@alumnos.usm.cl} \\
 	}
 \date{Valparaíso, \today}
 }
@@ -43,28 +44,31 @@
 \begin{document}
 \maketitle
 
-%\vspace{0.5cm}
+\vspace{0.5cm}
 
-%\begin{center}
-%	\begin{abstract}
-%		\input{include/abstract}
-%	\end{abstract}
-%\end{center}
+\begin{center}
+	\begin{abstract}
+		El presente documento trata acerca de la especificación de requerimientos del Chilean Virtual Observatory, el cual incluye
+		una referencia a la distribución de VO en el mundo, especificación de requerimientos, estudio en base a los requerimientos
+		de la capa de modelo de datos, aplicación y modelo vista controlador.
+	\end{abstract}
+\end{center}
 
-%\vspace{0.4cm}
+\vspace{0.4cm}
 
-%\begin{center}
-%\begin{keywords}
-%Keyword1, keyword2.
-%\end{keywords}
-%\end{center}
+\begin{center}
+\begin{keywords}
+	ChiVO, DaM, DAL, IVOA.
+\end{keywords}
+\end{center}
 
-%\vspace{1cm}
+\vspace{1cm}
 
 \thispagestyle{empty}
 
 \newpage
 \tableofcontents
+\newpage
 
 \input{include/resumen}
 \newpage
@@ -84,8 +88,8 @@
 \thispagestyle{empty}
 \addcontentsline{toc}{section}{Bibliography}
 
-%\nocite{*}
-%\bibliographystyle{alpha}
-%\bibliography{report}
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{report}
 
 \end{document}

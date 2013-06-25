@@ -1,1 +1,137 @@
 \section{Requerimientos de ChiVO}
+
+Los requerimientos se clasificarán en:
+\begin{itemize}
+	\item Necesidad: Esencial, deseable, opcional.
+	\item Prioridad temporal: Alta, media, baja.
+\end{itemize}
+
+\begin{enumerate}
+	\item \textbf{Buscar por coordenadas o región del cielo [Necesidad:
+Esencial | Prioridad temporal: Alta]:}
+
+Se podrán realizar búsquedas de posición mediante coordenadas y radio angular
+(cónicas) o por región del cielo.
+
+Los parámetros de las coordenadas pueden ser en distintos sistemas como
+ecuatorial, eclíptico, galáctico o supergaláctico. Los parámetros ingresados se
+convertirán al sistema de la fuente de datos, para así poder realizar las
+búsquedas, IVOA utiliza los sistemas de coordenadas ICRS y ecuatoriales J2000.
+
+En un principio, el sistema ofrecerá servicio de búsqueda por coordenadas
+cónicas y más adelante, en caso de ser vía un portal web, se ofrecerá búsqueda
+por región de cielo.
+
+El sistema también deberá permitir buscar simultáneamente un listado de
+coordenadas.
+
+	\item \textbf{Buscar por nombre o tipo de objeto [Necesidad: Esencial |
+Prioridad temporal: Alta]:}
+
+El sistema deberá permitir buscar por nombres de objetos que se encuentren
+definidos en Sesame, del Centre de Données astronomiques de Strasbourg (CDS).
+
+Por otro lado, la búsqueda por tipo o subtipo de objeto, tales como estrellas
+en formación, estrellas nebulosas planetarias, supernovas, galaxias, cometas,
+entre otros, permitirá al usuario encontrar datos relacionados con una
+problemática en especial. En un principio, el sistema realizará estas búsquedas
+acorde a la información presente en los catálogos.
+
+A futuro, el sistema deberá permitir minería de datos para detección de tipos
+de objetos similares, esto es posible debido a que existen clasificaciones
+discretas que permiten clasificar los objetos que se encuentran en las
+observaciones.
+
+Este tipo de búsquedas, se transforman en búsquedas por coordenadas, ya que al
+buscar por un nombre, por ejemplo, Sesame responde con la correspondiente
+ubicación del objeto en coordenadas. Y luego de ello se procede a realizar la
+búsqueda por coordenadas correspondiente.
+
+El resultado de la búsqueda deberá facilitar la obtención de datos para ser
+analizados como secuencias de tiempo.
+
+	\item \textbf{Buscar por metadatos espectrales (frecuencia y
+resolución) [Necesidad: Esencial | Prioridad temporal: Alta]:}
+
+Se podrán realizar búsquedas por metadatos espectrales, lo cual consiste en
+búsqueda por banda o rango de frecuencia, búsquedas por líneas espectrales y
+corrimiento al rojo o búsquedas por resolución espectral. Específicamente, hay
+dos enfoques:
+\begin{itemize}
+	\item Galáctico: Por frecuencia en reposo y velocidad radial.
+	\item Extragaláctico: Por frecuencia en reposo y corrimiento al rojo.
+\end{itemize}
+
+La Frecuencia en reposo incluye búsquedas por molécula, transición de molécula
+(vibracional, rotacional o electrónica) o frecuencia de línea espectral.
+
+	\item \textbf{Buscar por metadatos espaciales (resolución angular y
+campos de visión) [Necesidad: Esencial | Prioridad temporal: Alta]:}
+
+Se podrán realizar búsquedas espaciales en base a parámetros relacionados con
+rangos de  resolución angular y campos de visión y siempre en base a
+coordenadas.
+
+Los parámetros de las coordenadas pueden ser en distintos sistemas como
+ecuatorial, eclíptico, galáctico o supergaláctico. Los parámetros ingresados se
+convertirán al sistema de la fuente de datos, para así poder realizar las
+búsquedas.
+
+Además, se podrá especificar parámetros relacionados con la forma de las
+observaciones (rectangulares o redondas).
+
+	\item \textbf{Buscar por metadatos temporales [Necesidad: Esencial | Prioridad temporal: Baja]:}
+Se podrán realizar búsquedas por metadatos temporales que pueden ser
+clasificadas en dos tipos de búsquedas: 
+\begin{itemize} 
+\item Cuando fue realizada la observación, incluyendo cuantas veces se observó
+un objeto y/o el intervalo entre observaciones.  
+\item Nivel de ruido, duración de la observación o tiempo de integración. Dado
+un ruido, se necesita un tiempo de integración que depende de la frecuencia
+observada y del clima.  
+\end{itemize}
+
+	\item \textbf{Buscar por polarización [Necesidad: Esencial | Prioridad
+temporal: Media]:}
+
+Cada imagen se puede dividir en cuatro parámetros llamados los parámetros de
+Stokes o en dos: izquierda y derecha. En radio astronomía no suele hacerse
+debido a que requiere una alta precisión del instrumento, en el caso de ALMA se
+requiere que esté lista la calibración.
+
+El sistema debe permitir buscar si existe o no polarización en alguno de los
+parámetros de Stokes: I, Q, U o V.
+
+	\item \textbf{Cruzamiento de información [Necesidad: Esencial |
+Prioridad temporal: Alta]:}
+
+La búsqueda cruzada debe permitir al usuario realizar las búsquedas mencionadas
+anteriormente en múltiples fuentes de datos distribuidos globalmente, sin
+importar su tipo. Lo que permitirá obtener todos los datos existentes sobre un
+objeto o área espacial y así evitar realizar observaciones innecesarias debido
+al descubrimiento de observaciones existentes. Los tipos de fuentes pueden ser
+Sesame, ALMA u Observatorios Virtuales, que cumplan con los estándares de IVOA.
+
+La búsqueda de un mismo objeto en distintas fuentes de información, debido a
+que en cada fuente el instrumento tiene un margen de error en cuanto a la
+posición del objeto, debe ser capaz de realizar una intersección entre los
+radios de margen de error de las distintas fuentes para identificar al objeto
+en una búsqueda cruzada.
+
+	\item \textbf{Simulaciones [Necesidad: Deseable | Prioridad temporal:
+Baja]:}
+
+Es a veces necesario realizar comparaciones con observaciones obtenidas a
+través de simulaciones, así cómo es costoso  realizar una observación dos
+veces, para una simulación puede ser aún más, debido a que dependiendo de la
+magnitud, hay simulaciones que requieren una gran capacidad de cómputo.
+
+	\item \textbf{Servicios Bibliográficos [Necesidad: Deseable | Prioridad
+temporal: Baja]:}
+
+Las herramientas existentes cumplen su función correctamente. Por ello, basta
+con que al buscar un objeto, se desplieguen también resultados de
+investigaciones que se hayan realizado al respecto con un enlace a SIMBAD o
+similares.
+
+\end{enumerate}
